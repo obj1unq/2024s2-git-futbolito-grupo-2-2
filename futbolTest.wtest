@@ -12,9 +12,13 @@ describe " Test lionel levanta la pelota" {
 
     test " pelota subir y bajar" {
         const inicio = game.at(5,5)
-        //const arriba = game.at(5,6)
+        const arriba = game.at(5,6)
         pelota.position(inicio)
-        //pelota.subir()
-        assert.equals(inicio, {pelota.position()})
+
+        pelota.subir()
+        assert.equals(arriba, pelota.position())
+        
+        pelota.bajar()
+        assert.equals(inicio, pelota.position())
     }
 }
