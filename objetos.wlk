@@ -84,8 +84,6 @@ object pelota {
 	method posicionDespuesDeTaquito() {
 		return game.at((position.x()-2).max(0), position.y())
 	}
-}
-
 
 	method iniciar() {
 		position = game.at(0,5)
