@@ -1,0 +1,19 @@
+import wollok.game.*
+import objetos.*
+
+describe "Fulbito" {
+    method initialize() {
+    game.cellSize(40)
+	game.width(15)
+	game.height(10)
+  }
+  test "Patear" {
+
+    assert.equals(lionel.position(), game.at(3,5))
+    lionel.position(game.at(4,5))
+    lionel.position(game.at(5,5))
+    assert.equals(lionel.position(), game.at(5,5))
+    lionel.patear()
+    assert.equals(pelota.position(), game.at(8,5))
+  }
+}
