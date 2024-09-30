@@ -1,9 +1,8 @@
 /** First Wollok example */
 import wollok.game.*
 
-object lionel {
+object lionel {	
 	var camiseta = "titular"
-	
 	var property position = game.at(3,5)
 	
 	method image() {
@@ -20,11 +19,15 @@ object lionel {
 
 	method cambiarCamiseta() {
 		self.validarCambiarCamiseta()
-		if (camiseta == "titular") {
+		if (self.usaTitular()) {
 			camiseta = "suplente"
 		} else {
 			camiseta = "titular"
 		}
+	}
+
+	method usaTitular() {
+		return camiseta == "titular"
 	}
 
 	method validarCambiarCamiseta() {
