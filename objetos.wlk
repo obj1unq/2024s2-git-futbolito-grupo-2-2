@@ -1,3 +1,6 @@
+/** First Wollok example */
+import wollok.game.*
+
 object lionel {
 	
 	var property position = game.at(3,5)
