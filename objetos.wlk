@@ -2,11 +2,12 @@
 import wollok.game.*
 
 object lionel {
+	var camiseta = "titular"
 	
 	var property position = game.at(3,5)
 	
 	method image() {
-		return "lionel-titular.png"
+		return "lionel-" + camiseta + ".png"
 	}
 
 	method retroceder() {
@@ -15,6 +16,25 @@ object lionel {
 	
 	method avanzar() {
 		position = game.at((game.width() - 1).min(position.x() + 1), position.y()) 
+	}
+
+	method cambiarCamiseta() {
+		self.validarCambiarCamiseta()
+		if (camiseta == "titular") {
+			camiseta = "suplente"
+		} else {
+			camiseta = "titular"
+		}
+	}
+
+	method validarCambiarCamiseta() {
+		if(!self.posicionCambiarCamiseta()) {
+			self.error("No es lugar para cambiarme")
+		}
+	}
+
+	method posicionCambiarCamiseta() {
+		return position.x() == 0
 	}
 	
 }
